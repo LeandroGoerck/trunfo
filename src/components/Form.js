@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Form.css';
 
 class Form extends Component {
   render() {
@@ -26,14 +27,17 @@ class Form extends Component {
               id="name-input"
               data-testid="name-input"
               type="text"
+              name="cardName"
               value={ cardName }
               onChange={ onInputChange }
+              placeholder="Nome"
             />
           </label>
 
           <label htmlFor="description-input">
             <textarea
               data-testid="description-input"
+              name="cardDescription"
               value={ cardDescription }
               onChange={ onInputChange }
             >
@@ -45,6 +49,7 @@ class Form extends Component {
             <input
               data-testid="attr1-input"
               type="number"
+              name="cardAttr1"
               value={ cardAttr1 }
               onChange={ onInputChange }
             />
@@ -54,6 +59,7 @@ class Form extends Component {
             <input
               data-testid="attr2-input"
               type="number"
+              name="cardAttr2"
               value={ cardAttr2 }
               onChange={ onInputChange }
             />
@@ -63,6 +69,7 @@ class Form extends Component {
             <input
               data-testid="attr3-input"
               type="number"
+              name="cardAttr3"
               value={ cardAttr3 }
               onChange={ onInputChange }
             />
@@ -72,6 +79,7 @@ class Form extends Component {
             <input
               data-testid="image-input"
               type="text"
+              name="cardImage"
               value={ cardImage }
               onChange={ onInputChange }
             />
@@ -79,10 +87,11 @@ class Form extends Component {
 
           <select
             data-testid="rare-input"
+            name="cardRare"
             value={ cardRare }
             onChange={ onInputChange }
           >
-            <option selected value="normal">
+            <option defaultValue value="normal">
               normal
             </option>
             <option value="raro">raro</option>
@@ -100,7 +109,7 @@ class Form extends Component {
           </label>
 
           <button
-            type="submit"
+            type="button"
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
