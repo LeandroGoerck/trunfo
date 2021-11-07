@@ -35,6 +35,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="description-input">
+            Descrição
             <textarea
               data-testid="description-input"
               name="cardDescription"
@@ -46,6 +47,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="attr1-input">
+            Atributo 1
             <input
               data-testid="attr1-input"
               type="number"
@@ -56,6 +58,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="attr2-input">
+            Atributo 2
             <input
               data-testid="attr2-input"
               type="number"
@@ -66,6 +69,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="attr3-input">
+            Atributo 3
             <input
               data-testid="attr3-input"
               type="number"
@@ -76,6 +80,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="image-input">
+            Imagem
             <input
               data-testid="image-input"
               type="text"
@@ -85,27 +90,32 @@ class Form extends Component {
             />
           </label>
 
-          <select
-            data-testid="rare-input"
-            name="cardRare"
-            value={ cardRare }
-            onChange={ onInputChange }
-          >
-            <option defaultValue value="normal">
-              normal
-            </option>
-            <option value="raro">raro</option>
-            <option value="muito raro">muito-raro</option>
-          </select>
+          <label htmlFor="rare-input">
+            Raridade
+            <select
+              data-testid="rare-input"
+              name="cardRare"
+              value={ cardRare }
+              onChange={ onInputChange }
+            >
+              <option defaultValue value="normal">
+                normal
+              </option>
+              <option value="raro">raro</option>
+              <option value="muito raro">muito-raro</option>
+            </select>
+          </label>
 
           <label htmlFor="trunfo-input">
             <input
               id="super-trunfo"
               data-testid="trunfo-input"
               type="checkbox"
+              name="cardTrunfo"
               checked={ cardTrunfo }
               onChange={ onInputChange }
             />
+            Super tryunfo
           </label>
 
           <button

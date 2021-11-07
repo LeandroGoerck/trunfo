@@ -24,9 +24,16 @@ class App extends Component {
 
   handleChange({ target }) {
     const { name, value } = target;
-    this.setState(() => ({
-      [name]: value,
-    }));
+
+    if (name === 'cardTrunfo') {
+      this.setState(() => ({
+        cardTrunfo: target.checked,
+      }));
+    } else {
+      this.setState(() => ({
+        [name]: value,
+      }));
+    }
     console.log(name, value);
   }
 
