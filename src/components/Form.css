@@ -1,4 +1,5 @@
 form {
+  align-items: center;
   background-color: whitesmoke;
   border-color: lightsteelblue;
   border-radius: 10px;
@@ -9,4 +10,38 @@ form {
   margin: 20px;
   padding: 10px;
   width: 400px;
+}
+
+/*  https://www.w3schools.com/css/css_form.asp */
+input {
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 12px 20px;
+  width: 100%;
+}
+
+textarea {
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 150px;
+  padding: 12px 20px;
+  resize: none;
+  width: 100%;
+}
+
+select {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 20px;
+  width: 100%;
+}
+
+.form-button {
+  border: none;
+  cursor: pointer;
+  margin: 4px 2px;
+  padding: 16px 32px;
 }

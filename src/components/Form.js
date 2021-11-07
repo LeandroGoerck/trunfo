@@ -98,7 +98,7 @@ class Form extends Component {
               value={ cardRare }
               onChange={ onInputChange }
             >
-              <option defaultValue value="normal">
+              <option value="normal">
                 normal
               </option>
               <option value="raro">raro</option>
@@ -119,6 +119,7 @@ class Form extends Component {
           </label>
 
           <button
+            className="form-button"
             type="button"
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }
