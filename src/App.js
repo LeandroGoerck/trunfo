@@ -17,6 +17,7 @@ class App extends Component {
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
+      cardList: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSaveButton = this.handleSaveButton.bind(this);
@@ -34,11 +35,42 @@ class App extends Component {
       this.setState({ [name]: value }, () => this.saveButtonValidation());
     }
 
-    console.log(name, value);
+    // console.log(name, value);
   }
 
   handleSaveButton() {
-    console.log('Clicou em Salvar');
+    // console.log('Clicou em Salvar');
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardList,
+    } = this.state;
+
+    const newCard = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    };
+
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardList: [...cardList, newCard],
+    });
   }
 
   saveButtonValidation() {
