@@ -13,7 +13,7 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -98,25 +98,27 @@ class Form extends Component {
               value={ cardRare }
               onChange={ onInputChange }
             >
-              <option value="normal">
-                normal
-              </option>
+              <option value="normal">normal</option>
               <option value="raro">raro</option>
               <option value="muito raro">muito-raro</option>
             </select>
           </label>
 
-          <label htmlFor="trunfo-input">
-            <input
-              id="super-trunfo"
-              data-testid="trunfo-input"
-              type="checkbox"
-              name="cardTrunfo"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
-            Super tryunfo
-          </label>
+          {hasTrunfo ? (
+            <p>Você já tem um Super Trunfo em seu baralho</p>
+          ) : (
+            <label htmlFor="trunfo-input">
+              <input
+                id="super-trunfo"
+                data-testid="trunfo-input"
+                type="checkbox"
+                name="cardTrunfo"
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+              />
+              Super tryunfo
+            </label>
+          )}
 
           <button
             className="form-button"
@@ -127,7 +129,6 @@ class Form extends Component {
           >
             Salvar
           </button>
-
         </form>
       </div>
     );
@@ -143,7 +144,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,

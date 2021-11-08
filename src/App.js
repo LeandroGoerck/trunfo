@@ -48,6 +48,7 @@ class App extends Component {
       cardAttr3,
       cardImage,
       cardRare,
+      cardTrunfo,
       cardList,
     } = this.state;
 
@@ -59,6 +60,7 @@ class App extends Component {
       cardAttr3,
       cardImage,
       cardRare,
+      cardTrunfo,
     };
 
     this.setState({
@@ -70,6 +72,7 @@ class App extends Component {
       cardImage: '',
       cardRare: 'normal',
       cardList: [...cardList, newCard],
+      hasTrunfo: cardTrunfo,
     });
   }
 
