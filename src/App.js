@@ -133,6 +133,7 @@ class App extends Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      cardList,
     } = this.state;
     return (
       <div className="app">
@@ -164,6 +165,9 @@ class App extends Component {
             cardTrunfo={ cardTrunfo }
           />
         </section>
+        <div>
+          {cardList.map((card, i) => (<Card key={ i } { ...card } />))}
+        </div>
       </div>
     );
   }
