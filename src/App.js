@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import './App.css';
+import { cards } from './components/Cards';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends Component {
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
-      cardList: [],
+      cardList: cards,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSaveButton = this.handleSaveButton.bind(this);
@@ -165,8 +166,9 @@ class App extends Component {
             cardTrunfo={ cardTrunfo }
           />
         </section>
-        <div>
+        <div className="card-list">
           {cardList.map((card, i) => (<Card key={ i } { ...card } />))}
+          {/* // { <button>Excluir</button>} */}
         </div>
       </div>
     );
